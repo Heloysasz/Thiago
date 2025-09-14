@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 5 Desenvolvimento Web</title>
+</head>
+<body>
+    <script>
+        let saldo = 0
+        let sair = false
+        while (!sair) {
+            let opcao = prompt('Bem-vindo ao Banco \n' +
+            'Escolha uma opção: \n' +
+            '1 -> Depositar \n' +
+            '2 -> Sacar \n' +
+            '3 -> Ver Saldo \n' +
+            '4 -> Sair'
+            )
+            if(opcao == 1) {
+                let valor = prompt('Digite o valor a ser depositado: ')
+                saldo += Number(valor)
+
+            } else if(opcao == 2) {
+                let valor = prompt('Digite o valor a ser sacado: ')
+                if (valor > saldo){
+                    alert('Saldo insuficiente, tente novamente')
+                    continue
+                }
+                saldo -= Number(valor) 
+
+            } else if(opcao == 3) {
+                alert('Seu saldo é de: ' + saldo)
+            } else if(opcao == 4) {
+                alert('Obrigado por usar nosso banco!, Volte Sempre!')
+                sair = true
+            }else{
+                alert('Opção inválida, tente novamente!')
+            }
+        }
+    </script>
+</body>
+
+</html>
